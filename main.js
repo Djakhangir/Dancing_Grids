@@ -1,6 +1,5 @@
 
 const head = document.querySelector('.wrapper');        //Selecting the class wrapper
-let timeCircle = false;  
 let i = 0 ;                                            // i value for the unique id
 let width = window.innerWidth;
 let height = window.innerHeight;
@@ -15,31 +14,34 @@ function randomTime(min, max){
 }
 
                    //-------------------------------Pick randomly ID and change...--------------------//
+
 function randomChange() {
     for(let i=1; i<itter; i++){
-        let divEl = document.querySelector("#box"+i);
+        let divEl = document.querySelector("#box"+i); 
+   if (divEl) { 
         divEl.style.backgroundColor = randomColor();
+   } else {
+       break;
     }
+  } 
 }
 
                         //--------------------------Adding the div children----------------------------//
-function gridSystem(){
-    i++;                                    // increment i value 
+function gridSystem(){ 
+    i++;                                        // increment i value 
     const time = randomTime(9,10)              // timing
     const element = document.createElement("div");  // Adding the tag
     element.classList.add("boxes");                   // Adding the class
     element.id=`box${i}`;                           // Adding the id property to the 
     head.appendChild(element);                      // Appending it to the wrapper class as a child
-        setTimeout(() => { 
-            
-            // on randomTiming trigger setTimeout fn 
-            // element.classList.remove('box')
-            if (!timeCircle)                            // if it is not false
+    if (head.scrollHeight === head.height) {    // if scrollHeight is equal to windwo.height increment
+    setTimeout(() => {                          // on randomTiming trigger setTimeout fn 
             gridSystem();                               //run the fn
         }, time) 
-
+    } else {                            //otherwise stop;
+        head.removeChild(element);
+    }
 };
-
 
                         //---------------------------Change randomly color---------------------------//
 
@@ -51,14 +53,11 @@ function randomColor(){     //function which plays with rgba color sets;
         return `rgb(${r},${g},${b})`;
 }
 
-// function randomRGB(){
-//     return 'rgba(' + (Math.round(Math.random() * 360)) + ', 100%, 50%, 1)';
-// }
+
+function randomRGB(){
+    return 'rgba(' + (Math.round(Math.random() * 360)) + ', 100%, 50%, 1)';
+}
 
 
 gridSystem();
-setInterval(randomChange, 30);
-
-
-//stop the fn
-// fill all the grid cells in a page instead of adding the scrolling to the page;
+setInterval(randomChange, 10);
