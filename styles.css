@@ -26,6 +26,8 @@ body{
     justify-content: space-evenly;
 }
 
+/* Turn off the function randomChange frist then use keyframes and animation
+
 /* body {
     animation: randomChange 3s infinite;
 }

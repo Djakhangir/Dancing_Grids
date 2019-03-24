@@ -8,6 +8,7 @@ let widthx = window.innerWidth/15;
 let itter = Math.round(widthx*heightx+1);
 
 
+        //--------------RandomTime fn used for indicating the time beginning and when it to stop as max value-----------//
 
 function randomTime(min, max){
     return Math.round(Math.random() * (max - min) + min);
@@ -18,9 +19,9 @@ function randomTime(min, max){
 function randomChange() {
     for(let i=1; i<itter; i++){
         let divEl = document.querySelector("#box"+i); 
-   if (divEl && head) { 
+   if (divEl && head) {       // if div and head change the bricks color randomly as well as background; for css delete head
         divEl.style.backgroundColor = randomColor();
-        head.style.backgroundColor = randomColor();
+        head.style.backgroundColor = randomColor();     //comment in this and comment out css keyframes and body animations
    } else {
        break;
     }
