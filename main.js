@@ -18,8 +18,9 @@ function randomTime(min, max){
 function randomChange() {
     for(let i=1; i<itter; i++){
         let divEl = document.querySelector("#box"+i); 
-   if (divEl) { 
+   if (divEl && head) { 
         divEl.style.backgroundColor = randomColor();
+        head.style.backgroundColor = randomColor();
    } else {
        break;
     }
@@ -34,7 +35,7 @@ function gridSystem(){
     element.classList.add("boxes");                   // Adding the class
     element.id=`box${i}`;                           // Adding the id property to the 
     head.appendChild(element);                      // Appending it to the wrapper class as a child
-    if (head.scrollHeight === head.height) {    // if scrollHeight is equal to windwo.height increment
+    if (head.scrollHeight === height) {    // if scrollHeight is equal to windwo.height increment
     setTimeout(() => {                          // on randomTiming trigger setTimeout fn 
             gridSystem();                               //run the fn
         }, time) 
@@ -60,4 +61,4 @@ function randomRGB(){
 
 
 gridSystem();
-setInterval(randomChange, 10);
+setInterval(randomChange, 30);
