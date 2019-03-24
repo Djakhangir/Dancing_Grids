@@ -6,15 +6,10 @@ html {
     box-sizing: inherit;
 }
 
-body{
-    margin:0;
+.boxes {
+    border-radius: 50px;
+    
 }
-
-.box {
-    border-radius: 65px;
-    padding: 8px;
-}
-
 
 .wrapper {
     height: 100vh;
@@ -22,11 +17,12 @@ body{
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(auto-fill, 50px);
+    /* grid-template-rows: auto auto auto auto auto auto auto auto auto; to add responsiveness a little */
     grid-auto-rows: 15px;
     justify-content: space-evenly;
 }
 
-/* Turn off the function randomChange frist then use keyframes and animation
+/* Turn off the function randomChange first then use keyframes and animation below;
 
 /* body {
     animation: randomChange 3s infinite;

@@ -36,7 +36,7 @@ function gridSystem(){
     element.classList.add("boxes");                   // Adding the class
     element.id=`box${i}`;                           // Adding the id property to the 
     head.appendChild(element);                      // Appending it to the wrapper class as a child
-    if (head.scrollHeight === height) {    // if scrollHeight is equal to windwo.height increment
+    if (head.scrollHeight === height) {    // if scrollHeight is equal to window.height
     setTimeout(() => {                          // on randomTiming trigger setTimeout fn 
             gridSystem();                               //run the fn
         }, time) 
@@ -54,8 +54,6 @@ function randomColor(){     //function which plays with rgba color sets;
         // console.log(`rgb(${r},${g},${b})`);
         return `rgb(${r},${g},${b})`;
 }
-
-
 
 gridSystem();
 setInterval(randomChange, 30);
