@@ -56,10 +56,6 @@ function randomColor(){     //function which plays with rgba color sets;
 }
 
 
-function randomRGB(){
-    return 'rgba(' + (Math.round(Math.random() * 360)) + ', 100%, 50%, 1)';
-}
-
 
 gridSystem();
 setInterval(randomChange, 30);
